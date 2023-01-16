@@ -79,7 +79,60 @@ body {
   padding-bottom: 30px;
 }
 
+@media only screen and (max-width: 768px) {
+  body {
+    align-items: flex-start;
 
+  }
+  .wrapper_container {
+    max-width: 1000px;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 ;
+    border-radius: 0;
+    gap: 0;
+}
+
+  .sidebar_container {
+    width: 100vw;
+    height: 200px;
+    background-image: url("assets/images/bg-sidebar-mobile.svg");
+    border-radius: 0;
+    flex-direction: row;    
+    justify-content: center;
+    align-items: center;    
+    padding: 20px;
+  }
+
+  .indicator_txt > p {
+    display: none;
+  }
+
+  .step_container {
+    width: 100% !important;
+    border-radius: 10px;
+    padding: 0 !important;
+    align-items: center;
+  }
+
+  .step_one_form {
+    width: 100%;
+    background-color: var(--white);
+    margin-top: -70px;
+    border-radius: 10px;
+    padding: 20px 15px;
+  }
+
+  .button_container {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    background-color: var(--white);
+    width: 100%;
+    padding: 20px 15px !important;
+}
+}
 
 .indicator_num {
   width: 50px;
