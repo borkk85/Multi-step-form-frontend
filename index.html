@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <!-- Sidebar start -->
+ 
+   <div class="wrapper_container">
+    <div class="sidebar_container">
+      <div class="step_indicator">
+        <div class="indicator_num active">1</div>
+        <div class="indicator_txt">
+          <p class="sidebar_title">STEP 1</p>
+          <p class="sidebar_subtitle">Your Info</p>
+        </div>
+      </div>
+      <div class="step_indicator">
+        <div class="indicator_num">2</div>
+        <div class="indicator_txt">
+          <p class="sidebar_title">STEP 2</p>
+          <p class="sidebar_subtitle">Select plan</p>
+        </div>
+      </div>
+      <div class="step_indicator">
+        <div class="indicator_num">3</div>
+        <div class="indicator_txt">
+          <p class="sidebar_title">STEP 3</p>
+          <p class="sidebar_subtitle">add-ons</p>
+        </div>
+      </div>
+      <div class="step_indicator">
+        <div class="indicator_num">4</div>
+        <div class="indicator_txt">
+          <p class="sidebar_title">STEP 4</p>
+          <p class="sidebar_subtitle">summary</p>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar end -->
+
+    <!-- Step 1 start -->
+    <div class="step_container">
+    <form class="step active step_one_form " id="form" >
+        <h2 class="main_title">Personal info</h2>
+        <p class="main_subtitle">Please provide your name, email address, and phone number.</p>
+      <div class="form-input-data">
+        <div class="input-data">
+          <label id="name-label" for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="e.g. Stephen King"
+          />
+          <span id="error"></span>
+        </div>
+      
+        <div class="input-data">
+          <label id="email-label" for="email">Email Address</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="e.g. stephenking@lorem.com"
+          />
+          <span id="error"></span>
+        </div>
+        <div class="input-data">
+          <label id="phone-label" for="phone">Phone Number</label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            class="form-control"
+            placeholder="e.g. +1 234 567 890"
+          />
+          <span id="error"></span>
+        </div>
+      </div>
+    </form>
+
+      <!-- Step 1 end -->
+
+      <!-- Step 2 start -->
+
+      <div class="step step_two " id="step_2" >
+        <h2 class="main_title">Select your plan</h2>
+        <p class="main_subtitle">You have the option of monthly or yearly billing.</p>
+        <div class="cards">
+          <div class="card_plan card">
+            <div class="card-image">
+              <img src="/assets/images/icon-arcade.svg" alt="arcade" />
+            </div>
+            <div class="card-details">
+              <p class="card_name">Arcade</p>
+              <p class="card_price">
+                <span class="card_sub_price"></span>                
+                <span class="card_dur"></span>
+              </p>
+              <p class="yearly" style="display: none;">2 months free</p>
+            </div>
+          </div>
+          <div class="card_plan card">
+            <div class="card-image">
+              <img src="/assets/images/icon-advanced.svg" alt="advanced" />
+            </div>
+            <div class="card-details">
+              <p class="card_name">Advanced</p>
+              <p class="card_price">
+                <span class="card_sub_price"></span>                
+                <span class="card_dur"></span>
+              </p>
+              <p class="yearly" style="display: none;">2 months free</p>
+            </div>
+          </div>
+          <div class="card_plan card">
+            <div class="card-image">
+              <img src="/assets/images/icon-pro.svg" alt="pro" />
+            </div>
+            <div class="card-details">
+              <p class="card_name">Pro</p>
+              <p class="card_price">
+                <span class="card_sub_price"></span>                
+                <span class="card_dur"></span>
+              </p>
+              <p class="yearly" style="display: none;">2 months free</p>
+            </div>
+          </div>
+        </div>
+        <span  id="plan-error"></span>
+        <div class="toggle_container">
+          <p>Monthly</p>
+          <div class="toggle" id="toggle">
+            <div class="toggle_circle"></div>
+          </div>
+          <p>Yearly</p>
+        </div>
+      </div>
+      <!-- Step 2 end -->
+
+      <!-- Step 3 start -->
+      <div class="step step_three " id="step_3" >
+        <h2 class="main_title">Pick add-ons</h2>
+        <p class="main_subtitle">Add-ons help enhance your gaming experience.</p>
+        <div class="add_container">
+          <div class="card_online">
+            <input type="checkbox" name="checkbox"  class="checkbox" />
+            <div class="card_details">
+              <p class="card_name">Online service</p>
+              <p class="card_subtitle">Access to multiplayer games</p>
+            </div>
+            <p class="card_price_1">
+              <span class="card_sub_price"></span>/
+              <span class="card_dur"></span>
+            </p>
+          </div>
+          <div class="card_online">
+            <input type="checkbox" name="checkbox"  class="checkbox" />
+            <div class="card_details">
+              <p class="card_name">Larger storage</p>
+              <p class="card_subtitle">Extra 1TB of cloud save</p>
+            </div>
+            <p class="card_price_1">
+            <span class="card_sub_price"></span>/
+            <span class="card_dur"></span>
+          </p>
+          </div>
+          <div class="card_online">
+            <input type="checkbox" name="checkbox"  class="checkbox" />
+            <div class="card_details">
+              <p class="card_name">Customizable Profile</p>
+              <p class="card_subtitle">Custom theme on your profile</p>
+            </div>
+            <p class="card_price_1">
+              <span class="card_sub_price"></span>/
+              <span class="card_dur"></span>
+            </p>
+          </div>
+         
+        </div>
+      </div>
+      <!-- Step 3 end -->
+
+      <!-- Step 4 start -->
+      <div class="step step_four " id="step_4" >
+        
+        <h2 class="main_title">Finishing up</h2>
+        <p class="main_subtitle">Double-check everything looks OK before confirming.</p>
+        <div class="final_step_container">
+          <div class="finish_card">
+            <div id="selected_plan"><!-- selected plan --></div>
+            <button class="change_plan" id="change-plan">change</button>
+          </div>
+          <p id="selected-addon">
+            <!-- selected adds-on -->
+          </p>
+
+        </div>
+        <div class="total" id="total">
+          <!-- total amount -->
+        </div>
+     
+       
+      </div>
+    
+      <!-- Step 4 end -->
+
+      <!-- Step 5 start -->
+
+      <div class="step thank-you" id="thank_you" > 
+        <div class="final-step-container">
+        <div class="final_img">
+          <img src="/assets/images/icon-thank-you.svg" alt="" />
+        </div>
+        <h2 class="main_title">Thank you!</h3>
+        <p class="main_subtitle">
+          Thanks for confirming your subscription! We hope you have fun
+          using our platform. If you ever need support, please feel free to
+          email us at support@loremgaming.com.
+        </p>
+      </div>
+      </div>
+
+      
+      <div class="button_container">
+        <button class="button prev-button" id="prev-button" style="display: none;">
+          Go Back
+        </button>
+        <button type="submit" class="button next_button" id="next-button" form="form">
+          Next Step
+        </button>
+      </div>
+    
+    </div>
+  </div>
+      <!-- Step 5 end -->
+  
+ <script src="main.js"></script>
+</body>
+  
+ 
+</html>
