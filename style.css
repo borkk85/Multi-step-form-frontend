@@ -111,6 +111,7 @@ body {
 
   .step_container {
     width: 100% !important;
+    height: 350px !important;
     border-radius: 10px;
     padding: 0 !important;
     align-items: center;
@@ -126,7 +127,7 @@ body {
 
   .button_container {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     right: 0;
     background-color: var(--white);
     width: 100%;
@@ -169,7 +170,7 @@ body {
 
 .step_container {
   width: 65%;
-  min-height: 500px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
