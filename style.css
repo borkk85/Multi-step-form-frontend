@@ -133,6 +133,34 @@ body {
     width: 100%;
     padding: 20px 15px !important;
 }
+
+.step {
+  width: 100%;
+  background-color: var(--white);
+  margin-top: -70px;
+  border-radius: 10px;
+  padding: 20px 15px;
+}
+
+.cards {
+  height: 190px;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center !important;
+}
+
+.card {
+  flex-direction: row !important;
+  width: 100% !important;
+  height: 70px !important;
+  justify-content: flex-start !important;  
+}
+
+.final-step-container > p {
+    width: 300px !important;
+    line-height: 1.5;
+}
+
 }
 
 .indicator_num {
@@ -309,11 +337,23 @@ label {
   margin-bottom: 10px;
 }
 
-.toggle_container > p {
-  color: var(--Marine-blue);
+.monthly_plan {
+  color: var(--cool-gray);
+}
+
+.yearly_plan {
+  color: var(--cool-gray);
+}
+
+.monthly_plan.selected {
+  color: var(--marine-blue);
   font-weight: 500;
 }
 
+.yearly_plan.selected {
+  color: var(--marine-blue);
+  font-weight: 500;
+}
 .toggle {
   display: flex;
   align-items: center;
@@ -381,8 +421,6 @@ label {
   display: flex;
   flex-direction: column;
 }
-
-
 
 
 .card_online {
@@ -457,6 +495,10 @@ label {
   padding-top: 25px;
 }
 
+#selected-addon  span > p:nth-child(2) {
+  color: var(--marine-blue);
+}
+
 #selected-addon > span {
   display: flex;
   align-self: center;
@@ -484,6 +526,10 @@ label {
   color: var(--cool-gray);
   font-size: 18px;
   font-weight: 500;
+}
+
+.total span:nth-child(2) {
+  color: var(--purplish-blue);
 }
 
 .final-step-container {

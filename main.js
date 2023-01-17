@@ -139,8 +139,9 @@ function updateSidebar(index) {
   }
   if(index === 4) {
     nextButton.style.display = "none";
-    backButton.style.display = "none";
+    backButton.style.display = "none";    
     document.querySelector("#thank_you").style.display = "block";
+    sidebarNumbers[3].classList.add("active");
   }else{
     document.querySelector("#thank_you").style.display = "none";
   }
@@ -186,6 +187,11 @@ const yearlyPrices = [90, 120, 150];
 const monthlyAddOn = [1, 2, 2];
 const yearlyAddOn = [10, 20, 20];
 
+
+const monthlyPlan = document.querySelector(".monthly_plan");
+const yearlyPlan = document.querySelector(".yearly_plan");
+
+
 const plan = (elements, prices, duration) => {
   elements.forEach((element, i) => {
     element.querySelector(".card_sub_price").textContent = `$${prices[i]}/${duration}`;
@@ -210,11 +216,15 @@ toggle.addEventListener("click", (e) => {
     plan(cardPlan, yearlyPrices, "yr");
     plan(addOnCards, yearlyAddOn, "yr");
     yearly.forEach((item) => (item.style.display = "block"));
+    monthlyPlan.classList.remove("selected");
+    yearlyPlan.classList.add("selected");
   } else {
     yearly.forEach((item) => item.classList.remove("show"));
-    plan(cardPlan, yearlyPrices, "mo");
-    plan(addOnCards, yearlyAddOn, "mo");
+    plan(cardPlan, monthlyPrices, "mo");
+    plan(addOnCards, monthlyAddOn, "mo");
     yearly.forEach((item) => (item.style.display = "none"));
+    yearlyPlan.classList.remove("selected");
+    monthlyPlan.classList.add("selected");
   }
 });
 
@@ -231,7 +241,7 @@ cardPlan.forEach((card) => {
 
     let planName = target.querySelector(".card_name").textContent;
     let planPrice = target.querySelector(".card_sub_price").textContent;
-    let planDur = target.querySelector(".card_dur").textContent;
+    let planDur = toggle.classList.contains("active") ? "yr" : "mo";
 
     selectedPlan = { planName, planPrice, planDur };
   });
@@ -311,11 +321,11 @@ const renderPlan = (selectedPlan, addOn) => {
   selectedAddonsElement.innerHTML = "";
 
   const planName = document.createElement("p");
-  planName.textContent = `${selectedPlan.planName} (${duration})`;
+  planName.textContent = `${selectedPlan.planName}`;
   selectedPlanElement.appendChild(planName);
 
   const planPrice = document.createElement("p");
-  planPrice.textContent = `${selectedPlan.planPrice}/${selectedPlan.planDur}`;
+  planPrice.textContent = `${selectedPlan.planPrice}`;
   selectedPlanElement.appendChild(planPrice);
 
 
@@ -326,7 +336,7 @@ const renderPlan = (selectedPlan, addOn) => {
     addonItem.textContent = add.name;
 
     const addonPrice = document.createElement("p");
-    addonPrice.textContent = `+${add.price}/${add.duration}`;
+    addonPrice.textContent = `+${add.price}`;
 
     listItem.appendChild(addonItem);
     listItem.appendChild(addonPrice);
